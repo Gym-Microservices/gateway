@@ -8,7 +8,7 @@
 		<groupId>com.gym</groupId>
 		<artifactId>gym-microservices-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../parent</relativePath>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.gym</groupId>
@@ -17,7 +17,6 @@
 	<name>gateway</name>
 	<description>Api gateway to gym microservices</description>
 
-	<!-- Repositories for GitHub Packages -->
 	<repositories>
 		<repository>
 			<id>gym-microservices-releases</id>
@@ -26,10 +25,6 @@
 	</repositories>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway</artifactId>

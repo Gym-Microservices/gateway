@@ -17,13 +17,6 @@
 	<name>gateway</name>
 	<description>Api gateway to gym microservices</description>
 
-	<repositories>
-		<repository>
-			<id>gym-microservices-releases</id>
-			<url>https://maven.pkg.github.com/Gym-Microservices/parent</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -32,6 +25,18 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-resource-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-jose</artifactId>
 		</dependency>
 	</dependencies>
 

@@ -2,28 +2,42 @@
 
 ## 📋 Descripción
 
-API Gateway que actúa como punto de entrada único para todos los microservicios del gimnasio (Puerto 8087). Proporciona enrutamiento automático y balanceeo de carga a través de Eureka.
+API Gateway que actúa como punto de entrada único para todos los microservicios del gimnasio (Puerto 8087).
+Maneja autenticación JWT con Keycloak y proporciona enrutamiento automático a los microservicios.
+
+## 🔐 Autenticación
+
+- **Keycloak JWT**: Validación automática de tokens
+- **Rutas protegidas**: Requieren `Authorization: Bearer <token>`
+- **Rutas públicas**: `/test` endpoints para verificación básica
 
 ## 🛤️ Rutas Configuradas
 
-### 🔗 Microservicios
+### 🔗 Microservicios (Autenticación Requerida)
 
-- `/api/members/**` → `member-microservice` (Puerto 8081)
-- `/api/coaches/**` → `coach-microservice` (Puerto 8082)
-- `/api/equipment/**` → `equipment-microservice` (Puerto 8083)
-- `/api/classes/**` → `class-microservice` (Puerto 8084)
-- `/api/notifications/**` → `notification-microservice` (Puerto 8085)
-- `/api/payment/**` → `payment-microservice` (Puerto 8086)
+- `/member-microservice/api/members/**` → Member Service (Puerto 8081)
+- `/coach-microservice/api/coaches/**` → Coach Service (Puerto 8082)
+- `/equipment-microservice/api/equipment/**` → Equipment Service (Puerto 8083)
+- `/class-microservice/api/classes/**` → Class Service (Puerto 8084)
+- `/notification-microservice/api/notifications/**` → Notification Service (Puerto 8085)
+- `/payment-microservice/api/payment/**` → Payment Service (Puerto 8086)
+
+### 🌐 Acceso Público
+
+- Swagger UI en cada microservicio: `http://localhost:808X/swagger-ui.html`
+- Health checks: `/actuator/health`
 
 ## ✨ Características
 
-- Descubrimiento automático de servicios a través de Eureka
+- Autenticación JWT centralizada con Keycloak
+- Descubrimiento automático de servicios (Eureka)
+- Propagación de información de usuario a microservicios
 - Balanceeo de carga automático
-- Reescritura de rutas transparente
-- Endpoints de monitoreo disponibles
+- Endpoints de monitoreo
 
 ## 🛠️ Tecnologías
 
 - Spring Boot
 - Spring Cloud Gateway
+- Spring Security (OAuth2 Resource Server)
 - Eureka Client

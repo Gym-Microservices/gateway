@@ -22,6 +22,10 @@ public class SecurityConfig {
                         .pathMatchers("/actuator/**").permitAll()
                         .pathMatchers("/swagger/**", "/api-docs/**").permitAll()
                         .pathMatchers("/api/*/actuator/health/**").permitAll()
+                        .pathMatchers("/api/health").permitAll()
+                        .pathMatchers("/api/test").permitAll()
+                        .pathMatchers("/api/routes").permitAll()
+                        .pathMatchers("/api/aggregation/members/*/summary").authenticated()
                         .pathMatchers("/api/**", "/*/api/**",
                                 "/class-microservice/api/**", "/member-microservice/api/**",
                                 "/coach-microservice/api/**", "/equipment-microservice/api/**",

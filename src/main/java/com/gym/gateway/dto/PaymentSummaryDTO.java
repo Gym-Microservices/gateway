@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+import java.time.OffsetDateTime;
 import java.util.Date;
 
 @Data
@@ -20,6 +21,5 @@ public class PaymentSummaryDTO {
     private Double amount;
     
     @Schema(description = "Fecha del pago", example = "2024-01-15T10:00:00Z")
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
-    private Date paymentDate;
+    private OffsetDateTime paymentDate;
 }

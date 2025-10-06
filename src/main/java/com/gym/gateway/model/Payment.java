@@ -11,6 +11,6 @@ public class Payment {
     private Long memberId;
     private Double amount;
     
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+   @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", timezone = "UTC")
     private Date paymentDate;
 }
